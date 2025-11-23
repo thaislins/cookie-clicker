@@ -32,6 +32,14 @@ class _CookieClickerState extends State<CookieClicker> {
           },
           icon: Image.asset("images/cookie.png"),
         ),
+        TextButton(
+          onPressed: () {
+            setState(() {
+              count = 0;
+            });
+          },
+          child: Text("Reset Counter"),
+        ),
       ],
     );
   }
