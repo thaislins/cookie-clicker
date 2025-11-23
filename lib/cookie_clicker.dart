@@ -10,12 +10,20 @@ class CookieClicker extends StatefulWidget {
 class _CookieClickerState extends State<CookieClicker> {
   int count = 0;
 
+  String getCookieCount() {
+    if (count == 1) {
+      return "$count cookie";
+    } else {
+      return "$count cookies";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('Count: $count'),
+        Text(getCookieCount()),
         IconButton(
           onPressed: () {
             setState(() {
