@@ -23,7 +23,18 @@ class _CookieClickerState extends State<CookieClicker> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(getCookieCount()),
+        Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: Colors.yellow, // background color
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Text(
+            getCookieCount(),
+            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          ),
+        ),
+
         IconButton(
           onPressed: () {
             setState(() {
@@ -32,12 +43,16 @@ class _CookieClickerState extends State<CookieClicker> {
           },
           icon: Image.asset("images/cookie.png"),
         ),
+
         TextButton(
           onPressed: () {
             setState(() {
               count = 0;
             });
           },
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.yellow),
+          ),
           child: Text("Reset Counter"),
         ),
       ],
